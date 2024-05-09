@@ -147,11 +147,8 @@ namespace Correios.Demo
 
         private bool CorreiosTokenExpired(DateTime expiracaotokenUTC)
         {
-            bool expired = (expiracaotokenUTC <= DateTime.UtcNow.AddMinutes(-30));
-            if (expired)
-            {
-                Console.WriteLine("expired");
-            }
+            bool expired = (expiracaotokenUTC <= DateTime.UtcNow.AddMinutes(-30))
+
             return expired;
         }
 
