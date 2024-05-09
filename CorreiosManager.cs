@@ -7,13 +7,13 @@ namespace Correios.Demo
     {
         private readonly string _correiosUrl = "https://api.correios.com.br";
 
-        private readonly string _usuario = "SEU USUÁRIO AQUI";
+        private readonly string _usuario = "20182807000108";
 
         /// Obtenha o código aqui: https://cws.correios.com.br/dashboard/pesquisa
-        private readonly string _codigoAcesso = "SEU CÓDIGO DE ACESSO AQUI";
+        private readonly string _codigoAcesso = "p2cJQNVuxYPUDL5UM7JbQvx5qXIya7mOpfhfrRFj";
 
         /// Obtenha o cartão postagem e códigos aqui: https://sfe.correios.com.br/consultarContrato/consultarContrato.jsf#no-back-button
-        private readonly string _cartaoPostagem = "SEU CARTÁO POSTAGEM AQUI";
+        private readonly string _cartaoPostagem = "0070957207";
         private readonly string _codigoServicoContratoPAC = "03298";
         private readonly string _codigoServicoContratoSedex = "03220";
         private readonly string _codigoServicoContratoSedex10 = "03158";
@@ -148,7 +148,10 @@ namespace Correios.Demo
         private bool CorreiosTokenExpired(DateTime expiracaotokenUTC)
         {
             bool expired = (expiracaotokenUTC <= DateTime.UtcNow.AddMinutes(-30));
-
+            if (expired)
+            {
+                Console.WriteLine("expired");
+            }
             return expired;
         }
 
